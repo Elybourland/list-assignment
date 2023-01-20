@@ -1,0 +1,29 @@
+<div class="flex flex-col mt-5">
+  <div class="m-auto">
+    <h1 class="text-3xl font-bold text-center">
+      Details List
+    </h1>
+    <!-- <button
+
+      class="flex mx-auto mt-3 border-2 p-2 rounded-lg text-white bg-blue-900 focus:bg-blue-600"
+      (click)="showSecret = !showSecret"
+    > -->
+    <button
+      class="flex mx-auto mt-3 border-2 p-2 rounded-lg text-white bg-blue-900 focus:bg-blue-600"
+      (click)="onToggleDetails()"
+    >
+      Display Details
+    </button>
+    <p *ngIf="showSecret">Secret Password = tuna</p>
+    <ul class="flex flex-col mx-auto mt-3">
+      <li
+        class="flex mx-auto mt-3 w-full justify-center"
+        *ngFor="let logItem of log"
+        [ngStyle]="{ backgroundColor: logItem >= 5 ? 'blue' : 'transparent' }"
+        [ngClass]="{ 'white-text': logItem >= 5 }"
+      >
+        {{ logItem }}
+      </li>
+    </ul>
+  </div>
+</div>
